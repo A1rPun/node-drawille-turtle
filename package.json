@@ -1,0 +1,22 @@
+{
+  "name": "drawille-turtle",
+  "version": "0.1.0",
+  "description": "Drawing turtle graphics in terminal with unicode braille characters",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "author": "A1rPun",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:A1rPun/node-drawille-turtle.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/A1rPun/node-drawille-turtle/issues"
+  },
+  "dependencies": {
+    "bresenham": "0.0.3",
+    "drawille": "1.1.0"
+  }
+}
