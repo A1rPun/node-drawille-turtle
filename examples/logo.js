@@ -9,4 +9,5 @@ for (let i = 0; i < 36; i++) {
     t.forward(8);
   }
 }
-console.log(t.frame());
+
+process.stdout.write(t.frame());
