@@ -1,8 +1,11 @@
 {
   "name": "drawille-turtle",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Drawing turtle graphics in terminal with unicode braille characters",
   "main": "index.js",
+  "scripts": {
+    "test": "exit 1"
+  },
   "files": [
     "index.js"
   ],
@@ -15,6 +18,16 @@
   "bugs": {
     "url": "https://github.com/A1rPun/node-drawille-turtle/issues"
   },
+  "keywords": [
+    "turtle",
+    "drawille",
+    "draw",
+    "braille",
+    "lines",
+    "circle",
+    "ascii"
+  ],
+  "homepage": "https://github.com/A1rPun/node-drawille-turtle#readme",
   "dependencies": {
     "bresenham": "0.0.3",
     "drawille": "1.1.0"
