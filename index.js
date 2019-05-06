@@ -12,15 +12,15 @@ class Turtle extends Canvas {
     this.x = Number.isInteger(x) ? x : this.width / 2;
     this.y = Number.isInteger(y) ? y : this.height / 2;
     this.rotation = 0;
-    this.brush_on = true;
+    this.isPendown = true;
   }
 
-  up() {
-    this.brush_on = false;
+  penup() {
+    this.isPendown = false;
   }
 
-  down() {
-    this.brush_on = true;
+  pendown() {
+    this.isPendown = true;
   }
 
   forward(step) {
@@ -30,7 +30,7 @@ class Turtle extends Canvas {
   }
 
   move(x, y) {
-    if (this.brush_on)
+    if (this.isPendown)
       bresenham(this.x, this.y, x, y, (x, y) => this.set(x, y));
     this.x = x;
     this.y = y;
@@ -44,18 +44,18 @@ class Turtle extends Canvas {
     this.rotation -= angle;
   }
 
-  back(step) {
+  backward(step) {
     this.forward(-step);
   }
 
   circle(radius, extent = fullCircle, steps) {
     if (!steps) {
       const frac = abs(extent) / fullCircle;
-      steps = 1 + min(11 + abs(radius) / 6, 59) * frac;
+      steps = 1 + (min(11 + abs(radius) / 6, 59) * frac);
     }
     let w = (1 * extent) / steps;
     let w2 = w / 2;
-    let l = 2 * radius * sin((w2 * PI) / 180);
+    let l = 2 * radius * sin(w2 * radian);
     if (radius < 0) {
       l = -l;
       w = -w;
@@ -71,13 +71,16 @@ class Turtle extends Canvas {
 }
 
 [
-  ["pu", "up"],
-  ["pd", "down"],
+  ["pu", "penup"],
+  ["up", "penup"],
+  ["pd", "pendown"],
+  ["down", "pendown"],
   ["fd", "forward"],
   ["mv", "move"],
   ["rt", "right"],
   ["lt", "left"],
-  ["bk", "back"],
+  ["bk", "backward"],
+  ["back", "backward"],
   ["arc", "circle"],
 ].forEach(methods => {
   const [alias, fn] = methods;

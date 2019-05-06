@@ -10,5 +10,6 @@ for (let i = 0; i < 8; i++) {
   steps++;
   size += increase;
 }
+t.circle(80)
 
 process.stdout.write(t.frame());
